@@ -27,3 +27,7 @@ For example, we have <a-entity> and attach the geometry, material, light, and po
 - Generarla con IA: https://skybox.blockadelabs.com/
 - Generarlas con el teléfono: https://panoraven.com/en
 
+3. Animaciones de elementos
+
+https://aframe.io/docs/1.4.0/components/animation.html
+
