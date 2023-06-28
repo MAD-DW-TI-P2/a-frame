@@ -35,3 +35,10 @@ https://aframe.io/docs/1.4.0/components/animation.html
 
 Meter Boostrap, manejar el DOM, modificar propiedades de elementos
 
+TODO
+
+- Crear escuchadores cuando me pongo encima
+- Añadir formas dinámicamente
+- Organiar colisiones
+- Meter en tiddly
+
