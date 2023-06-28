@@ -31,3 +31,7 @@ For example, we have <a-entity> and attach the geometry, material, light, and po
 
 https://aframe.io/docs/1.4.0/components/animation.html
 
+4. Movimiento de cámara con botones
+
+Meter Boostrap, manejar el DOM, modificar propiedades de elementos
+
