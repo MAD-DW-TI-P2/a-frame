@@ -21,3 +21,9 @@ For example, we have <a-entity> and attach the geometry, material, light, and po
           material="color: white; shader: flat; src: glow.jpg"
           position="0 0 -5"></a-entity>
 </code>
+
+2. Podemos poner una imagen 3D en el fondo. Para que se cargue tenemos que ejecutar nuestro archivo en un servidor.
+
+- Generarla con IA: https://skybox.blockadelabs.com/
+- Generarlas con el teléfono: https://panoraven.com/en
+
