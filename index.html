@@ -17,6 +17,7 @@
   <body>
     <nav>
       <button type="button" class="btn btn-secondary" onclick="moveCamera()">Mover cámara</button>
+      <button type="button" class="btn btn-primary" onclick="addElement()">Añadir elemento</button>
     </nav>
     <a-scene cursor="rayOrigin: mouse">
         <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1"></a-camera>
@@ -58,7 +59,7 @@
          el.addEventListener('click', function () {
              console.log(el.getAttribute('data-info'));
              console.log("click");
-             alert('Click en la caja roja');
+             alert(el.getAttribute('data-info'));
          });
        }
     });
@@ -66,6 +67,16 @@
     function moveCamera() {
         pos = document.getElementsByTagName('a-camera')[0].getAttribute('position').z
         document.getElementsByTagName('a-camera')[0].getAttribute('position').z = pos + 1;
+    }
+
+    function addElement() {
+        var scene = document.querySelector('a-scene');
+        var box = document.createElement('a-box');
+        box.setAttribute('position', {x: 0, y: 0.5, z: -3});
+        box.setAttribute('color', 'green');
+        box.setAttribute('data-info', 'Caja verde');
+        box.setAttribute('handle-events', '');
+        scene.appendChild(box);
     }
   </script>
 
