@@ -39,10 +39,24 @@ Meter Boostrap, manejar el DOM, modificar propiedades de elementos
 
 Añadir en la escena: cursor="rayOrigin: mouse" y crear un componente con funciones
 
+https://aframe.io/docs/1.4.0/components/cursor.html
+
+6. Meter objetos
+
+Info: https://aframe.io/docs/1.4.0/components/obj-model.html
+
+Formato 1. glTF is a standard file format for three-dimensional scenes and models. A glTF file uses one of two possible file extensions: . gltf (JSON/ASCII) or . glb (binary). Es el jpg del 3D también funciona en Unity y Unreal. Pesa menos y va todo es un mismo archivo.
+
+Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
+
 TODO
 
 - Añadir formas dinámicamente
 - Meter objetos
 - Organiar colisiones
 - Meter en tiddly
+
+Más info
+
+https://www.adictosaltrabajo.com/2017/08/29/aframe-para-hacer-un-videojuego/
 
