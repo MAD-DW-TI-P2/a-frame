@@ -16,25 +16,43 @@
   </head>
   <body>
     <nav>
-        <button type="button" class="btn btn-secondary" onclick="moveCamera()">Mover cámara</button>
+      <button type="button" class="btn btn-secondary" onclick="moveCamera()">Mover cámara</button>
     </nav>
-    <a-scene>
+    <a-scene cursor="rayOrigin: mouse">
         <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1"></a-camera>
-        <a-entity log="event: anEvent; message: Hello, Metaverse!"></a-entity>
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-box position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato"></a-box>
+        <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
+        <a-box position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" clickhandler="txt:box1"></a-box>
         <a-sphere position="0 1.25 -5" data-info="Esfera roja" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" data-info="Cilindro amarillo" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <!--a-sky color="#ECECEC"></a-sky-->
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
     </a-scene>
   </body>
   <script>
+    AFRAME.registerComponent('handle-events', {
+       init: function () {
+         var el = this.el;  //
+         el.addEventListener('mouseenter', function () {
+           console.log(el.getAttribute('data-info'));
+           console.log("mouseenter");
+         });
+         el.addEventListener('mouseleave', function () {
+             console.log(el.getAttribute('data-info'));
+             console.log("mouseleave");
+         });
+         el.addEventListener('click', function () {
+             console.log(el.getAttribute('data-info'));
+             console.log("click");
+             alert('Click en la caja roja');
+         });
+       }
+    });
+
     function moveCamera() {
         pos = document.getElementsByTagName('a-camera')[0].getAttribute('position').z
         document.getElementsByTagName('a-camera')[0].getAttribute('position').z = pos + 1;
     }
-    </script>
+  </script>
 
 </html>

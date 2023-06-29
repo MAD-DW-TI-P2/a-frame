@@ -35,10 +35,14 @@ https://aframe.io/docs/1.4.0/components/animation.html
 
 Meter Boostrap, manejar el DOM, modificar propiedades de elementos
 
+5. Crear escuchadores a eventos 
+
+Añadir en la escena: cursor="rayOrigin: mouse" y crear un componente con funciones
+
 TODO
 
-- Crear escuchadores cuando me pongo encima
 - Añadir formas dinámicamente
+- Meter objetos
 - Organiar colisiones
 - Meter en tiddly
 
