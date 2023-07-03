@@ -47,6 +47,13 @@ Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 
 7. Añadir elementos
 
+8. Interacciónes con la cámara
+
+- Meter el <cursor> en la cámara y crear un componente
+
+https://aframe.io/docs/1.4.0/components/cursor.html
+
+
 TODO
 
 - Colisiones

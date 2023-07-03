@@ -20,10 +20,12 @@
       <button type="button" class="btn btn-primary" onclick="addElement()">Añadir elemento</button>
     </nav>
     <a-scene cursor="rayOrigin: mouse">
-        <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1"></a-camera>
+        <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1">
+          <a-cursor></a-cursor>
+        </a-camera>
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="#4CC3D9"></a-box>
         <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
-        <a-box position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" clickhandler="txt:box1"></a-box>
+        <a-box id="cajaAnimada" position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" change-color-on-hover></a-box>
         <a-sphere position="0 1.25 -5" data-info="Esfera roja" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" data-info="Cilindro amarillo" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
@@ -40,8 +42,8 @@
         </a-assets>
         <a-entity position="-1 0 0" obj-model="obj: #elephant-obj; mtl: #elephant-mtl" scale="0.15 0.15 0.15"></a-entity>
 
-
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
+
     </a-scene>
   </body>
   <script>
@@ -78,6 +80,26 @@
         box.setAttribute('handle-events', '');
         scene.appendChild(box);
     }
+
+    AFRAME.registerComponent('change-color-on-hover', {
+      schema: {
+        color: {default: 'white'}
+      },
+      init: function () {
+        // Componente que cambia el color de un objeto al pasar el mouse por encima
+        var data = this.data; // Hace relación al schema
+        // el objeto que tiene el componente
+        var el = this.el;  // <a-box>
+        var defaultColor = el.getAttribute('material').color;
+
+        el.addEventListener('mouseenter', function () {
+          el.setAttribute('color', data.color);
+        });
+        el.addEventListener('mouseleave', function () {
+          el.setAttribute('color', defaultColor);
+        });
+      }
+    });
   </script>
 
 </html>
