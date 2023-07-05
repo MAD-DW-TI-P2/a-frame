@@ -49,15 +49,19 @@ Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 
 8. Interacciónes con la cámara
 
-- Meter el <cursor> en la cámara y crear un componente
+- Meter el <cursor> en la cámara y crear un componente https://aframe.io/docs/1.4.0/components/cursor.html
 
-https://aframe.io/docs/1.4.0/components/cursor.html
+- Quitar el atributo animation de una entidad para que se pare
+
+9. Tamaños y posiciones relativas. Meter entidades dentro de otras
+
+10. Entender la posición
+
 
 
 TODO
 
 - Colisiones
-- Meter en tiddly
 
 Más info
 

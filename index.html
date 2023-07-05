@@ -23,33 +23,45 @@
         <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1">
           <a-cursor></a-cursor>
         </a-camera>
-        <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="blue" handle-events></a-box>
+
         <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
-        <a-box id="cajaAnimada" position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" change-color-on-hover></a-box>
-        <a-sphere position="0 1.25 -5" data-info="Esfera roja" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" data-info="Cilindro amarillo" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+        <a-box id="cajaAnimada" position="-1 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" change-color-on-hover>
+          <a-cylinder position="1 0.75 -3" data-info="Cilindro amarillo" radius="0.5" height="1.5" color="#FFC65D" handle-events></a-cylinder>
+        </a-box>
+
+        </a-box>
+        
+        <a-sphere position="0 1.25 -5" data-info="Esfera roja" radius="1.25" color="#EF2D5E" handle-events></a-sphere>
+
+        <a-cylinder position="1 0.75 -3" data-info="Cilindro amarillo" radius="0.5" height="1.5" color="#FFC65D" handle-events></a-cylinder>
+
         <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
         <a-assets>
           <a-asset-item id="human-obj" src="assets/standard-male-figure-obj/standard-male-figure.obj"></a-asset-item>
           <a-asset-item id="human-mtl" src="assets/standard-male-figure-obj/standard-male-figure.mtl"></a-asset-item>
         </a-assets>
-        <a-entity position="-2 0 0" obj-model="obj: #human-obj; mtl: #human-mtl" scale="0.05 0.05 0.05"></a-entity>
+        <a-entity position="-2 0 0" rotation="0 0 0" obj-model="obj: #human-obj; mtl: #human-mtl" scale="0.05 0.05 0.05"></a-entity>
 
         <a-assets>
           <a-asset-item id="elephant-obj" src="assets/elephant/Elephant.obj"></a-asset-item>
           <a-asset-item id="elephant-mtl" src="assets/elephant/Elephant.mtl"></a-asset-item>
         </a-assets>
-        <a-entity position="-1 0 0" obj-model="obj: #elephant-obj; mtl: #elephant-mtl" scale="0.15 0.15 0.15"></a-entity>
+        <a-entity position="-1 0 0" rotation="30 90 30" obj-model="obj: #elephant-obj; mtl: #elephant-mtl" scale="0.15 0.15 0.15"></a-entity>
 
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
 
     </a-scene>
   </body>
   <script>
+
+
     AFRAME.registerComponent('handle-events', {
        init: function () {
-         var el = this.el;  //
+         var el = this.el;
+         console.log(el)  //
          el.addEventListener('mouseenter', function () {
            console.log(el.getAttribute('data-info'));
            console.log("mouseenter");
@@ -65,6 +77,9 @@
          });
        }
     });
+
+
+
 
     function moveCamera() {
         pos = document.getElementsByTagName('a-camera')[0].getAttribute('position').z
@@ -94,6 +109,7 @@
 
         el.addEventListener('mouseenter', function () {
           el.setAttribute('color', data.color);
+          el.removeAttribute('animation');
         });
         el.addEventListener('mouseleave', function () {
           el.setAttribute('color', defaultColor);
