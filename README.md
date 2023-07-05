@@ -1,6 +1,6 @@
-# a-frame-basics
+# Intro A-frame
 
-1. Getting Started
+### 1. Getting Started
 
 - https://aframe.io/docs/1.4.0/introduction/#getting-started
 - Visual inspector: Open up any A-Frame scene, hit <ctrl> + <alt> + i or <ctrl> + <option> + i, and fly around to peek under the hood!
@@ -11,26 +11,26 @@
           material="color: white; shader: flat; src: glow.jpg"
           position="0 0 -5"></a-entity>
 
-2. Podemos poner una imagen 3D en el fondo. Para que se cargue tenemos que ejecutar nuestro archivo en un servidor.
+### 2. Podemos poner una imagen 3D en el fondo. Para que se cargue tenemos que ejecutar nuestro archivo en un servidor.
 
 - Generarla con IA: https://skybox.blockadelabs.com/
 - Generarlas con el teléfono: https://panoraven.com/en
 
-3. Animaciones de elementos
+### 3. Animaciones de elementos
 
 - https://aframe.io/docs/1.4.0/components/animation.html
 
-4. Movimiento de cámara con botones
+### 4. Movimiento de cámara con botones
 
 - Meter Boostrap, manejar el DOM, modificar propiedades de elementos
 
-5. Crear escuchadores a eventos 
+### 5. Crear escuchadores a eventos 
 
 - Añadir en la escena: cursor="rayOrigin: mouse" y crear un componente con funciones
 
 - https://aframe.io/docs/1.4.0/components/cursor.html
 
-6. Meter objetos
+### 6. Meter objetos
 
 - Info: https://aframe.io/docs/1.4.0/components/obj-model.html
 
@@ -38,25 +38,23 @@
 
 - Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 
-7. Añadir elementos
+### 7. Añadir elementos
 
-8. Interacciónes con la cámara
+### 8. Interacciónes con la cámara
 
 - Meter el <cursor> en la cámara y crear un componente https://aframe.io/docs/1.4.0/components/cursor.html
 
 - Quitar el atributo animation de una entidad para que se pare
 
-9. Tamaños y posiciones relativas. Meter entidades dentro de otras
+### 9. Tamaños y posiciones relativas. Meter entidades dentro de otras
 
-10. Entender la rotación y animarla disparando al  hombre
+### 10. Entender la rotación y animarla disparando al  hombre
 
-
-
-TODO
+### TODO
 
 - Colisiones
 
-Más info
+### Más info
 
-https://www.adictosaltrabajo.com/2017/08/29/aframe-para-hacer-un-videojuego/
+- https://www.adictosaltrabajo.com/2017/08/29/aframe-para-hacer-un-videojuego/
 
