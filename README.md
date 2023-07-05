@@ -55,7 +55,7 @@ Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 
 9. Tamaños y posiciones relativas. Meter entidades dentro de otras
 
-10. Entender la posición
+10. Entender la rotación y animarla disparando al  hombre
 
 
 
