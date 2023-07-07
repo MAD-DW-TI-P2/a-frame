@@ -23,6 +23,9 @@
         <a-camera id="myCamera" wasd-controls="acceleration: 5" position="0.5 0.6 1">
           <a-cursor></a-cursor>
         </a-camera>
+        <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1"></a-torus>
+
+        
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="blue" handle-events></a-box>
 
         <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
@@ -57,15 +60,37 @@
 
         <a-entity position="-1 0 0" rotation="0 0 0" obj-model="obj: #elephant-obj; mtl: #elephant-mtl" scale="0.15 0.15 0.15"></a-entity>
 
-        <a-entity position="2 0 -6" scale="0.05 0.05 0.05" gltf-model="assets/zombie_dog/scene.gltf"></a-entity>
+        <a-entity position="2 0 -6" scale="0.05 0.05 0.05" gltf-model="assets/zombie_dog/scene.gltf" disparo ></a-entity>
 
-        <a-entity position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb"></a-entity>
+        <a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" animation-mixer="clip: Attack; loop: true;" ataque ataque2 ></a-entity>
 
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
 
     </a-scene>
   </body>
   <script>
+    perrito = document.getElementById('perrito');
+    perrito.addEventListener('click', function () {
+      alert("perrito");
+      perrito.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
+    });
+
+    AFRAME.registerComponent('ataque', {
+       init: function () {
+         el.addEventListener('click', function () {
+             el.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
+         });
+       }
+    });
+
+    AFRAME.registerComponent('ataque2', {
+       init: function () {
+         el.addEventListener('click', function () {
+             el.setAttribute('animation-mixer', {'clip': 'Attack', 'loop': 'repeat', 'repetitions': 'indefinite'});
+         });
+       }
+    });
+    
 
 
     AFRAME.registerComponent('handle-events', {
@@ -75,6 +100,7 @@
          el.addEventListener('mouseenter', function () {
            console.log(el.getAttribute('data-info'));
            console.log("mouseenter");
+
          });
          el.addEventListener('mouseleave', function () {
              console.log(el.getAttribute('data-info'));
@@ -92,15 +118,17 @@
 
 
 
-    figura = document.getElementById('humano');
-    figura.addEventListener('click', function () {
-      figura.setAttribute('animation', {'property': 'rotation', 'to': {x: -90, y: 0, z: 0}});
-    });
+    // figura = document.getElementById('humano');
+    // figura.addEventListener('click', function () {
+    //   //figura.setAttribute('animation', "rotation; to: -90 0 0; dur: 2000; easing: linear; loop: true");
+    //   figura.setAttribute('animation', {'property': 'rotation', 'to': {x: -90, y: 0, z: 0}});
+    //   figure.removeAttribute('animation');
+    // });
 
 
 
 
-/*
+
     AFRAME.registerComponent('disparo', {
       init: function () {
         var el = this.el;  // <a-box>
@@ -112,20 +140,25 @@
         });
       }
     });
-*/
+
+
+
+
     function moveCamera() {
         pos = document.getElementsByTagName('a-camera')[0].getAttribute('position').z
         document.getElementsByTagName('a-camera')[0].getAttribute('position').z = pos + 1;
     }
 
     function addElement() {
+      for(i=0;x.lenght > x; i++ ){
         var scene = document.querySelector('a-scene');
         var box = document.createElement('a-box');
-        box.setAttribute('position', {x: 0, y: 0.5, z: -3});
+        box.setAttribute('position', {x: posx, y: posy, z: posz});
         box.setAttribute('color', 'green');
         box.setAttribute('data-info', 'Caja verde');
         box.setAttribute('handle-events', '');
         scene.appendChild(box);
+      }
     }
 
     // humano = document.getElementById('humano');
