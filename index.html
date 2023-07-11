@@ -62,7 +62,9 @@
 
         <a-entity position="2 0 -6" scale="0.05 0.05 0.05" gltf-model="assets/zombie_dog/scene.gltf" disparo ></a-entity>
 
-        <a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" animation-mixer="clip: Attack; loop: true;" ataque ataque2 ></a-entity>
+        <a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" andar></a-entity>
+
+        <!--a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" animation-mixer="clip: Walk" andar></a-entity-->
 
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
 
@@ -72,24 +74,36 @@
     perrito = document.getElementById('perrito');
     perrito.addEventListener('click', function () {
       alert("perrito");
-      perrito.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
+      perrito.setAttribute('animation-mixer', {clip : "Walk"});
+      //perrito.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
     });
 
-    AFRAME.registerComponent('ataque', {
-       init: function () {
-         el.addEventListener('click', function () {
-             el.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
-         });
-       }
-    });
+    // AFRAME.registerComponent('ataque', {
+    //    init: function () {
+    //      el.addEventListener('click', function () {
+    //          el.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
+    //      });
+    //    }
+    // });
 
-    AFRAME.registerComponent('ataque2', {
-       init: function () {
-         el.addEventListener('click', function () {
-             el.setAttribute('animation-mixer', {'clip': 'Attack', 'loop': 'repeat', 'repetitions': 'indefinite'});
-         });
-       }
-    });
+    // AFRAME.registerComponent('ataque2', {
+    //    init: function () {
+    //      el.addEventListener('click', function () {
+    //          el.setAttribute('animation-mixer', {'clip': 'Attack', 'loop': 'repeat', 'repetitions': 'indefinite'});
+    //      });
+    //    }
+    // });
+    /*
+      AFRAME.registerComponent('andar', {
+        init: function () {
+          var el = this.el;
+          el.addEventListener('click', function () {
+              console.log('perrito 3');
+              el.setAttribute('animation-mixer', {clip: "Walk"});
+          });
+        }
+      });
+    */
     
 
 
