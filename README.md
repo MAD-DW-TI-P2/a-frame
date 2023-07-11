@@ -51,10 +51,6 @@
 
 ### 10. Entender la rotación y animarla disparando al  hombre
 
-### TODO
-
-- Colisiones
-
 ### Más info
 
 - https://www.adictosaltrabajo.com/2017/08/29/aframe-para-hacer-un-videojuego/
