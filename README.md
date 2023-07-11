@@ -49,7 +49,11 @@
 
 ### 9. Tamaños y posiciones relativas. Meter entidades dentro de otras
 
-### 10. Entender la rotación y animarla disparando al  hombre
+### 10. Entender la rotación y animarla disparando al hombre
+
+### TODO
+
+Animar el perrito
 
 ### Más info
 
