@@ -6,12 +6,12 @@
 - Visual inspector: Open up any A-Frame scene, hit <ctrl> + <alt> + i or <ctrl> + <option> + i, and fly around to peek under the hood!
 - Entity-Component Architecture: A-Frame is a powerful three.js framework, providing a declarative, composable, reusable entity-component structure. HTML is just the tip of the iceberg; developers have unlimited access to JavaScript, DOM APIs, three.js, WebVR, and WebGL. Estructura: Entidad (a-entity), los componentes (Los atributos de las etiquetas) y las propiedades <a-entity ${componentName}="${propertyName1}: ${propertyValue1}; ${propertyName2}: ${propertyValue2}">. For example, we have <a-entity> and attach the geometry, material, light, and position components with various properties and property values:
 
-<code>
+```
 <a-entity geometry="primitive: sphere; radius: 1.5"
           light="type: point; color: white; intensity: 2"
           material="color: white; shader: flat; src: glow.jpg"
           position="0 0 -5"></a-entity>
-</code>
+```
 
 ### 2. Podemos poner una imagen 3D en el fondo.
 
@@ -57,11 +57,11 @@
 
 ### 12. Controles de mando
 
-<code>
+```
 <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
 <a-entity oculus-touch-controls="hand: left" oculus-thumbstick-controls></a-entity>
 <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
-</code>
+```
 
 
 
