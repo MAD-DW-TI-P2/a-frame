@@ -2,7 +2,8 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <!--https://www.npmjs.com/package/aframe-extras-->
+    <!--SE BLOQUEA script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
       nav {
@@ -21,7 +22,7 @@
       <button type="button" class="btn btn-primary" onclick="addElement()">Añadir elemento</button>
     </nav>
     <a-scene cursor="rayOrigin: mouse">
-        <a-camera id="myCamera" movement-controls wasd-controls="acceleration: 5" position="0.5 0.6 1">
+        <a-camera id="myCamera" look-controls position="0.5 0.6 1">
           <a-cursor></a-cursor>
         </a-camera>
 
@@ -31,8 +32,6 @@
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="blue" handle-events></a-box>
 
         <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
-
-
 
         <a-box id="cajaAnimada" position="3 0.5 -5" data-info="Caja animada de color tomate" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato" change-color-on-hover>
 
