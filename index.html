@@ -42,16 +42,8 @@
           <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
         </a-entity>
 
-        
-
-
-        <!--a-camera id="myCamera" look-controls position="0.5 0.6 1">
-          <a-cursor></a-cursor>
-        </a-camera-->
-
         <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1"></a-torus>
 
-        
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="green" handle-events></a-box>
 
         <a-box position="1 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
@@ -74,8 +66,8 @@
           <a-asset-item id="human-obj" src="assets/standard-male-figure-obj/standard-male-figure.obj"></a-asset-item>
           <a-asset-item id="human-mtl" src="assets/standard-male-figure-obj/standard-male-figure.mtl"></a-asset-item>
         </a-assets>
-        <a-entity id="humano" position="-2 0 0" rotation="0 0 0" obj-model="obj: #human-obj; mtl: #human-mtl" scale="0.05 0.05 0.05" disparo></a-entity>
 
+        <a-entity id="humano" position="-2 0 0" rotation="0 0 0" obj-model="obj: #human-obj; mtl: #human-mtl" scale="0.05 0.05 0.05" disparo></a-entity>
 
         <a-assets>
           <a-asset-item id="elephant-obj" src="assets/elephant/Elephant.obj"></a-asset-item>
@@ -88,37 +80,18 @@
 
         <a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" andar></a-entity>
 
-        <!--a-entity id="perrito" position="2 0 -6" scale="0.5 0.5 0.5" gltf-model="assets/perrito.glb" animation-mixer="clip: Walk" andar></a-entity-->
-
         <a-sky color="#ECECEC" src="assets/realistic_zen_minimal_futurist.jpg"></a-sky>
 
     </a-scene>
   </body>
   <script>
-    perrito = document.getElementById('perrito');
-    perrito.addEventListener('click', function () {
-      alert("perrito");
-      perrito.setAttribute('animation-mixer', {clip : "Walk"});
-      //perrito.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
-    });
-
-    // AFRAME.registerComponent('ataque', {
-    //    init: function () {
-    //      el.addEventListener('click', function () {
-    //          el.setAttribute('animation-mixer', "clip : Attack, loop : repeat, repetitions : indefinite");
-    //      });
-    //    }
+    // perrito = document.getElementById('perrito');
+    // perrito.addEventListener('click', function () {
+    //   alert("perrito");
+    //   perrito.setAttribute('animation-mixer', {clip : "Walk"});
     // });
 
-    // AFRAME.registerComponent('ataque2', {
-    //    init: function () {
-    //      el.addEventListener('click', function () {
-    //          el.setAttribute('animation-mixer', {'clip': 'Attack', 'loop': 'repeat', 'repetitions': 'indefinite'});
-    //      });
-    //    }
-    // });
-    /*
-      AFRAME.registerComponent('andar', {
+    AFRAME.registerComponent('andar', {
         init: function () {
           var el = this.el;
           el.addEventListener('click', function () {
@@ -126,8 +99,7 @@
               el.setAttribute('animation-mixer', {clip: "Walk"});
           });
         }
-      });
-    */
+    });
 
     AFRAME.registerComponent('thumbstick-logging',{
       init: function () {

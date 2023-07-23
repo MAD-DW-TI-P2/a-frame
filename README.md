@@ -63,12 +63,11 @@
 <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
 ```
 
+### 13. Animar el perrito
 
-
-
-### TODO
-
-Animar el perrito
+el.setAttribute('animation-mixer', {clip: "Walk"});
+```<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
+``````
 
 ### Más info
 
