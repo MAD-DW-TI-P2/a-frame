@@ -3,17 +3,17 @@
     <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <!--Extras-->
-    <!--script src="https://gftruj.github.io/webzamples/aframe/extras/aframe-extras.min.js"></script-->
+    <script src="https://gftruj.github.io/webzamples/aframe/extras/aframe-extras.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
     <!--Oculus-->
     <!--https://stackoverflow.com/questions/71131300/cant-move-camera-in-a-frame-with-oculus-quest-2-->
-    <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+    <!--script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-teleport.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-transform.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-vive.js"></script>
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-wasd.js"></script>
-    <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-webxr.js"></script>
+    <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-touch-controls-webxr.js"></script-->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
@@ -42,7 +42,12 @@
           <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
         </a-entity>
 
+        <!-- CON ESTE SCRIPT NO FUNCIOANA EL TEXT script src="https://gftruj.github.io/webzamples/aframe/extras/aframe-extras.min.js"></script-->
+        <a-text value="Hello, World tomás!" color="black" width='1' height="auto"></a-text>
+
         <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1"></a-torus>
+
+  
 
         <a-box position="-1 0.5 -3" data-info="Caja azul" rotation="0 45 0" color="green" handle-events></a-box>
 
