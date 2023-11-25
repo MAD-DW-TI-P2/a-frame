@@ -67,9 +67,8 @@
 
 el.setAttribute('animation-mixer', {clip: "Walk"});
 ```<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
-``````
+```
 
-### Más info
-
-- https://www.adictosaltrabajo.com/2017/08/29/aframe-para-hacer-un-videojuego/
+### 14. Multiusuario
+https://glitch.com/edit/#!/base-project-naf
 
