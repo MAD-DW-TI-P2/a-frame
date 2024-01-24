@@ -102,6 +102,7 @@
           el.addEventListener('click', function () {
               console.log('perrito 3');
               el.setAttribute('animation-mixer', {clip: "Walk"});
+            el.setAttribute('animation', 'property: position; to: 2 0 2; dur: 2000; easing: linear; loop: false');
           });
         }
     });
