@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+        <a-box position="-1 0.5 -3" data-info="Caja verde" rotation="0 45 0" color="green" handle-events></a-box>
+        <a-box position="0 0.5 -3" data-info="Caja roja" rotation="0 45 0" color="red" handle-events></a-box>
+    </a-scene>
+  </body>
+  <script>
+    AFRAME.registerComponent('handle-events', {
+       init: function () {
+
+         var el = this.el;
+
+         el.addEventListener('click', function () {
+
+            alert(el.getAttribute('data-info'));
+
+            el.setAttribute('color', 'blue');
+            el.setAttribute('data-info', 'Caja azul');
+
+
+
+            newX = 5 + el.getAttribute('position').x;
+            newY = 10 + el.getAttribute('position').y ;
+            newZ = -10 + el.getAttribute('position').z;
+
+
+            el.setAttribute('animation', `property: position; to: ${newX} ${newY}  ${newZ}; dur: 2000; easing: linear; loop: false`);
+         });
+       }
+    });
+  </script>
+</html>

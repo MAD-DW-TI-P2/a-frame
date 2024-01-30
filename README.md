@@ -41,21 +41,21 @@
 
 - Formato 2. OBJ https://en.wikipedia.org/wiki/Wavefront_.obj_file
 
-### 7. Añadir elementos
-
-### 8. Interacciónes con la cámara
+### 7. Interacciónes con la cámara
 
 - Meter el <cursor> en la cámara y crear un componente https://aframe.io/docs/1.4.0/components/cursor.html
 
 - Quitar el atributo animation de una entidad para que se pare
 
-### 9. Tamaños y posiciones relativas. Meter entidades dentro de otras
+### 8. Tamaños y posiciones relativas. Meter entidades dentro de otras
 
-### 10. Entender la rotación y animarla disparando al hombre
+### 9. Entender la rotación y animarla disparando al hombre
 
-### 11. Volar en ordenador (No funciona en VR)
+### 10. Volar en ordenador (No funciona en VR)
 
-### 12. Controles de mando
+a-camera position="0 1.6 0" look-controls wasd-controls="fly:true"
+
+### 11. Controles de mando
 
 ```
 <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
@@ -63,12 +63,12 @@
 <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
 ```
 
-### 13. Animar el perrito
+### 12. Animar el perrito
 
 el.setAttribute('animation-mixer', {clip: "Walk"});
-```<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
-```
+Con el script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"
 
-### 14. Multiusuario
+### 13. Multiusuario
+
 https://glitch.com/edit/#!/base-project-naf
 
