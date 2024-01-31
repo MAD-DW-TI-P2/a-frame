@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+  <body>
+  </body>
+  <script>
+    function print(data) {
+      for (i in data) {
+        document.getElementsByTagName('body')[0].innerHTML += `<p>${data[i].nombre} </p><img src="https://cristinamaser.com${data[i].invitationimg[0].src}" /></br></br>`;
+      }
+    }
+    // Función que llama y luego tienen un método
+    fetch('https://cristinamaser.com/api/invitations')
+    .then(response => response.json())
+    // Paso 1: solo ver los datos
+    //.then(responseJson => console.log(responseJson.data))
+    .then(responseJson => print(responseJson.data))
+  </script>
+</html>
