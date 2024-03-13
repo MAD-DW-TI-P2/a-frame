@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+    <script src="p.js"></script> 
+  </head>
+<body>
+    <!--p>Material: https://n5ro.github.io/aframe-physics-system/ y https://github.com/c-frame/aframe-physics-system?tab=readme-ov-file (Actualización de Ayer: https://github.com/orgs/c-frame/repositories)</p>
+    <p>Components for A-Frame physics integration. Supports CANNON.js and Ammo.js: https://github.com/schteppe/cannon.js#features</p>
+    <p>Lo que hay por debajo... three.js, cannon.js</p>
+    <p>Un dynamic-body puede moverse y es afectado por fuerzas y colisiones. Por ejemplo, si tienes una pelota como dynamic-body, esta puede rodar, ser empujada, o rebotar al interactuar con otros objetos o fuerzas en la escena. Consumen muchos recursos</p>
+    <p>Un static-body es esencialmente inmóvil. No se mueve por sí mismo y no es afectado por fuerzas o colisiones de la misma manera que un dynamic-body. Por ejemplo, un piso o una pared en tu escena serían típicamente static-body</p>
+    <p>Con dynamic-body puedo detectar colisiones. Por ejemplo puedo detectar la colición de la cámara con dynamic-body añadiendo escuchadores de collision o añadir colisiones a los objetos</p>
+    <p>Problemas: Con wasd-controls puedo entrar dentro de los objetos static-body y los static-body no reaccionan a las colisiones con la cámara. Solución: Podría limitar el movimineto de la cámara a unas posiciones</p-->
+  
+    <a-scene physics="gravity: -9">
+      <!-- Configuro gravedad y modo debug para ver lineas-->
+
+      <a-entity id="camera" camera position="1 3 1" look-controls wasd-controls limit-camera>
+        <!--dynamic-body no funciona-->
+        <!--Límite con JS a la cámara -->
+        <!--Meter un componente estático dentro de la cámara para chocar con los dinámicos-->
+        <a-box width="5" height="5" id="user" static-body="shape: box; mass: 1"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body position="25 0 -40" width="5" height="5" depth="5" rotation="0 0 0">
+        <!--Al meterle posición negativa rebota si choca con algo-->
+        <!--Meter un componente estático para que funcione el dynamic si fuera en un entity-->
+        <a-box width="5" height="5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" material="opacity: 0; transparent: true;">
+          <a-entity scale="0.01 0.01 0.01"
+          animation-mixer="action" play-all-model-animations  
+          gltf-model="https://cdn.glitch.global/d79ead91-4c48-49ec-9b58-a016591d644e/toon_cat_free.glb?v=1705870508921"
+          ></a-entity>
+        </a-box>
+      </a-entity>
+
+      <!--a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+        <a-entity position="-3.5 0 0" rotation="0 0 0" scale="0.01 0.01 0.01" 
+        animation-mixer="action" play-all-model-animations  
+        gltf-model="https://cdn.glitch.global/d79ead91-4c48-49ec-9b58-a016591d644e/toon_cat_free.glb?v=1705870508921"
+        ></a-entity>
+      </a-entity-->
+
+      <a-box id="roja" position="-5 8 -25" color="red" width="5" height="5" depth="5" dynamic-body="shape: box; mass: 20" collision-detect></a-box>
+
+      <a-box id="other-box" position="5 7 -35" color="grey" width="10" height="10" depth="10" dynamic-body="mass: 100000"></a-box>
+
+
+      <!-- Suelo y otros objetos estáticos con los que no puedo colisionar pero puedo evitar traspasar con la cámara y evitan que los objetos dinámicos se muevan demasiado -->
+      <a-box id="suelo" position="0 -4 0" rotation="0 0 0" depth="100" width="100" height="2" color="green" static-body></a-box>
+      
+      <a-box id="muro" position="0 -4 0" rotation="0 90 90" depth="100" width="100" height="2" color="orange" static-body></a-box>
+
+    </a-scene>
+  </body>
+</html>
+
+
+
+
