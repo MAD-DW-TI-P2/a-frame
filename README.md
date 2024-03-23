@@ -1,4 +1,4 @@
-# Intro A-frame
+# A-frame
 
 ### 1. Getting Started
 
@@ -51,6 +51,8 @@
 
 ### 9. Entender la rotación y animarla disparando al hombre
 
+Cuidado con la rotación de cámara, no se pueden modificar a través del DOM y una vez modificada vuelve a colocarse. O rotas la escena o borras la cámara y la vuelves a meter
+
 ### 10. Volar en ordenador (No funciona en VR)
 
 a-camera position="0 1.6 0" look-controls wasd-controls="fly:true"
@@ -70,6 +72,7 @@ Con el script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-
 
 ### 13. Multiusuario
 
+Ver carpeta: Network...
 https://glitch.com/edit/#!/base-project-naf
 
 ### 14. Físicas
